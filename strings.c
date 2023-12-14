@@ -10,7 +10,11 @@
 
 
 
-
+/**
+ * _strlen - a function to detect string's length.
+ * @string: the string to find its length.
+ * Return: returns the length of the string.
+ */
 int _strlen(const char *string)
 {
 	int i = 0;
@@ -23,8 +27,13 @@ int _strlen(const char *string)
 
 
 
-
-char * _strcon(char * string1, char *string2)
+/**
+ * _strcon - a function to concatenate 2 strings.
+ * @string1: the first string.
+ * @string2: the second string.
+ * Return: returns a pointer to the concatenated string.
+ */
+char *_strcon(char *string1, char *string2)
 {
 	int i, j;
 	char *concatenated_string = malloc(PATH_MAX);
@@ -35,12 +44,18 @@ char * _strcon(char * string1, char *string2)
 	for (j = 0; j <= _strlen(string2); i++, j++)
 		concatenated_string[i] = string2[j];
 
-	return(concatenated_string);
+	return (concatenated_string);
 }
 
 
 
-
+/**
+ * _strncmp - a function to compare 2 strings.
+ * @string1: the first function to compare.
+ * @string2: the second function to compare.
+ * @length: the length to compare.
+ * Return: returns 0 if the strings are equal, or -1 otherwise.
+ */
 int _strncmp(const char *string1, const char *string2, int length)
 {
 	int i;
@@ -56,7 +71,11 @@ int _strncmp(const char *string1, const char *string2, int length)
 
 
 
-
+/**
+ * str_to_int - a function to convert a string to number.
+ * @string: the string to convert to number.
+ * Return: returns the converted number.
+ */
 int str_to_int(char *string)
 {
 	int i;
@@ -74,13 +93,17 @@ int str_to_int(char *string)
 
 
 
-
-char* int_to_str(int number)
+/**
+ * int_to_str - a function to convert a number to string.
+ * @number: the number to convert to string.
+ * Return: returns a pointer to the converted string.
+ */
+char *int_to_str(int number)
 {
 	int i;
 	int length = 0;
 	int temp = number;
-	char *str = malloc (sizeof(char) * 10);
+	char *str = malloc(sizeof(char) * 10);
 
 	for (i = 0; temp > 0; i++)
 	{
@@ -96,5 +119,5 @@ char* int_to_str(int number)
 
 	str[length] = '\0';
 
-	return(str);
+	return (str);
 }
