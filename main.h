@@ -29,32 +29,32 @@ extern char *command;
 
 
 int _strlen(const char *string);
-char * _strcon(char * string1, char *string2);
+char *_strcon(char *string1, char *string2);
 int _strncmp(const char *string1, const char *string2, int length);
 int str_to_int(char *string);
-char* int_to_str(int number);
+char *int_to_str(int number);
 
 
 void command_line_arguments_counter(char *text);
-void arguments_reset();
+void arguments_reset(void);
 void allocate_execve(char *text);
-int find_execve_path();
+int find_execve_path(void);
 
 
 
-int check_built_in();
-void the_exit();
-void print_environment();
+int check_built_in(void);
+void the_exit(void);
+void print_environment(void);
 
 
 void remove_command_new_line(int command_length);
 void command_not_found(char *program_name);
-void eof_reached();
+void eof_reached(void);
 
 
 
 char *_getenv(const char *name);
-void allocate_path();
+void allocate_path(void);
 
 
 
