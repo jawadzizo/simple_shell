@@ -23,6 +23,8 @@ extern char **path;
 extern int command_count;
 extern char *command;
 
+extern int terminal;
+
 
 #define BUFFSIZE 1024
 
@@ -55,6 +57,7 @@ void eof_reached(void);
 
 char *_getenv(const char *name);
 void allocate_path(void);
+void free_path();
 
 
 

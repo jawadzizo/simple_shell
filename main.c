@@ -18,6 +18,8 @@ char **path;
 int command_count = 0;
 char *command;
 
+int terminal;
+
 
 
 
@@ -31,6 +33,8 @@ int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int reading;
 
+	terminal = isatty(STDIN_FILENO);
+
 	allocate_path();
 
 	while (1)
@@ -39,7 +43,8 @@ int main(__attribute__((unused)) int argc, char *argv[])
 
 		command = malloc(sizeof(char) * BUFFSIZE);
 
-		write(STDOUT_FILENO, "$ ", 2);
+		if (terminal == 1)
+			write(STDOUT_FILENO, "$ ", 2);
 
 		reading = read(STDIN_FILENO, command, BUFFSIZE);
 
@@ -50,6 +55,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
 
 		if (command[0] == '\n')
 		{
+			free(command);
 			continue;
 		}
 
@@ -139,4 +145,21 @@ void allocate_path(void)
 	}
 
 	path[i] = NULL;
+}
+
+
+void free_path()
+{
+	int i;
+
+	if (path != NULL)
+	{
+		for (i = 0; i < path_length; i++)
+		{
+			free(path[i]);
+			path[i] = NULL;
+		}
+
+		free(path);
+	}
 }

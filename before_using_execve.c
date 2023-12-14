@@ -8,9 +8,12 @@
  */
 void eof_reached(void)
 {
-	free(path);
+	free_path();
 	free(command);
-	write(STDOUT_FILENO, "\n", 1);
+
+	if (terminal == 1)
+		write(STDOUT_FILENO, "\n", 1);
+
 	exit(0);
 }
 
