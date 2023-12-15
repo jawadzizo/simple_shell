@@ -16,7 +16,7 @@ void command_line_arguments_counter(char *entire_command)
 
 	for (i = 0; i < _strlen(entire_command); i++)
 	{
-		if (entire_command[i] != ' ')
+		if ((entire_command[i] != ' ') && (entire_command[i] != '\0') && (entire_command[i] != '\n') && (entire_command[i] != '#') && (entire_command[i] != ';'))
 		{
 			arguments_length_each[j]++;
 			arguments_length++;
@@ -97,6 +97,7 @@ void arguments_reset(void)
 
 	free(command);
 	command = NULL;
+
 }
 
 

@@ -31,9 +31,16 @@ void the_exit(void)
 	int status;
 
 	if (arguments_length == 1)
+	{
+		arguments_reset();
+		free_path();
 		exit(0);
+	}
 
 	status = str_to_int(arguments_for_execve[1]);
+
+	arguments_reset();
+	free_path();
 
 	exit(status);
 }

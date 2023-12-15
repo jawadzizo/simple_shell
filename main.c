@@ -62,6 +62,13 @@ int main(__attribute__((unused)) int argc, char *argv[])
 		remove_command_new_line(reading);
 
 		command_line_arguments_counter(command);
+
+		if (arguments_length == 0)
+		{
+			free(command);
+			continue;
+		}
+
 		allocate_execve(command);
 
 		if (check_built_in() == 0)
