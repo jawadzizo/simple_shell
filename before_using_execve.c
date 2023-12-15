@@ -58,4 +58,7 @@ void command_not_found(char *program_name)
 	write(STDOUT_FILENO, missing, _strlen(missing));
 
 	free(command_count_string);
+
+	if (terminal == 0)
+		exit(127);
 }
