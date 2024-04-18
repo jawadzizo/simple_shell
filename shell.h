@@ -16,7 +16,7 @@ extern char **environ;
 #define print(fd,x) write(fd,x,_strlen(x))
 
 
-#define BUFFER_SIZE 4096         /* the buffer to hold the whole command line*/
+#define BUFFER_SIZE 16384        /* the buffer to hold the whole command line*/
 #define SEP_LIMIT 3              /* limit of characters in the separators*/
 #define ARGS_MAX 128             /* limit of arguments passed to execve */
 #define SEP_MAX ARGS_MAX         /* limit of separators */
