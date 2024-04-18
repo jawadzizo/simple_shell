@@ -6,7 +6,7 @@
  * @cmd: a pointer to a structure that holds the required data
  * @is_environ_allocated: a pointer that tells us if environ is malloc'd or not
  */
-void __exit(command_t *cmd, bool *is_environ_allocated)
+void __exit(command_t *cmd, bool is_environ_allocated)
 {
 	int exit_status;
 

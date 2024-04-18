@@ -23,7 +23,7 @@ void run_built_in_command(command_t *cmd, bool *is_environ_allocated)
 	switch (i)
 	{
 		case 0:
-			__exit(cmd, is_environ_allocated);
+			__exit(cmd, *is_environ_allocated);
 			break;
 		case 1:
 			_env(cmd);

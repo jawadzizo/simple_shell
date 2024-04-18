@@ -155,7 +155,7 @@ void free_alias_nodes(alias_t *head);
 
 
 /*exit*/
-void __exit(command_t *cmd, bool *is_environ_allocated);
+void __exit(command_t *cmd, bool is_environ_allocated);
 bool is_positive_digit(char *string);
 void print_illegal_number_error(command_t *cmd);
 
