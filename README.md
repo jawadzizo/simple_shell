@@ -23,7 +23,7 @@ The shell will look for the command in the following order:
 4. Checks if the command is in PATH, environ must not be NULL. If found, the path of the command will be passed to execve after making a new process. If not, then;
 5. Command is not found.
 
-![flowchart](flowchart.png)
+![flowchart](flowchart/flowchart.png)
 
 ## Constraints
 The shell doesn't support (yet) most basic features, like:
