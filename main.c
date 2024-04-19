@@ -24,7 +24,10 @@ int main(int argc, char *argv[])
 		remove_newline(cmd.line);
 		map_sections(&cmd, cmd.line);
 		if (is_line_empty(&cmd))
+		{
+			print_prompt(is_terminal);
 			continue;
+		}
 
 		for (i = 0; cmd.section[i] != NULL; i++)
 		{
